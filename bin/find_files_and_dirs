@@ -1,0 +1,4 @@
+#!/bin/bash
+
+printf "Files:\n$(find / -iname $1 -type f)\nDirs:\n\
+$(find / -iname $1 -type d)\n"

@@ -1,0 +1,130 @@
+[kbdd_layout]
+command=./kbdd_layout/kbdd_layout
+interval=persist
+
+[volume-pulseaudio]
+command=./volume-pulseaudio/volume-pulseaudio
+interval=1
+signal=1
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+AUDIO_HIGH_SYMBOL=♪
+#AUDIO_MED_THRESH=50
+AUDIO_MED_SYMBOL=♪
+#AUDIO_LOW_THRESH=0
+AUDIO_LOW_SYMBOL=♪
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+[battery]
+command=./battery/battery
+interval=30
+LABEL= 
+
+# [batterybar]
+# command=./batterybar/batterybar
+# label=bat:
+# interval=5
+# markup=pango
+# min_width=bat: ■■■■■
+# Discharging colors low to high
+#C1=#FF0027
+#C2=#FF3B05
+#C3=#FFB923
+#C4=#FFD000
+#C5=#E4FF00
+#C6=#ADFF00
+#C7=#6DFF00
+#C8=#10BA00
+#CHARGING_COLOR=#00AFE3
+#FULL_COLOR=#FFFFFF
+#AC_COLOR=#535353
+
+[bandwidth3]
+command=./bandwidth3/bandwidth3
+interval=persist
+markup=pango
+#LABEL=<span font='FontAwesome'>  </span>
+#IFACE=[automatically determined]
+#DT=3
+#UNIT=Mb
+# Exposed variables: rx, wx, tx, unit, iface
+#PRINTF_COMMAND=printf "${LABEL}%-5.1f/%5.1f %s/s\n", rx, wx, unit;
+
+[disk-io]
+command=./disk-io/disk-io
+#command=./disk-io/disk-io -w 3 -M -P 0
+interval=persist
+markup=pango
+LABEL= 
+#instance=/^sda/
+#DT=5
+#MB_ONLY=0 #0 or 1
+#KB_ONLY=0 #0 or 1
+#WIDTH=4
+#MB_PRECISION=1
+#KB_PRECISION=0
+#REGEX=/^(s|h)d[a-zA-Z]+/
+#THRESHOLD=0
+#WARN_COLOR="#FF0000"
+#SEPARATOR=/
+#PREFIX=
+#SUFFIX="B/s"
+
+[cpu_usage]
+command=./cpu_usage/cpu_usage
+interval=10
+LABEL= 
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+
+[memory]
+command=./memory/memory
+# label=MEM
+interval=1
+
+[memory]
+command=./memory/memory
+# label=SWAP
+instance=swap
+interval=1
+
+[load_average]
+command=./load_average/load_average
+# LABEL=Avg:
+interval=10
+
+
+[temperature]
+command=./temperature/temperature
+# label=
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[time]
+command=./time/time
+interval=1
+#TZ_FILE=~/.tz
+STRFTIME_FORMAT=%d-%m-%Y
+TZONES=$DEFAULT_TZ,Brazil/East,Australia/Brisbane,Asia/Calcutta
+TZ_LABELS=,Brazil,AU,Hyderabad
+
+[time]
+command=./time/time
+interval=1
+#TZ_FILE=~/.tz
+STRFTIME_FORMAT=%H:%M  
+TZONES=$DEFAULT_TZ,Brazil/East,Australia/Brisbane,Asia/Calcutta
+TZ_LABELS=,Brazil,AU,Hyderabad

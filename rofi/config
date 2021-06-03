@@ -1,0 +1,3 @@
+rofi.theme: /usr/share/rofi/themes/Monokai-custom.rasi
+rofi.modi:	drun#run#window#ssh
+rofi.font: Sans 12
