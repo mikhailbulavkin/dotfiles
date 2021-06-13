@@ -14,6 +14,7 @@ Plug 'vim-vdebug/vdebug'
 " Plug 'mattn/emmet-vim'
 " Plug 'bfrg/vim-cpp-modern'
 " Plug 'ycm-core/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
