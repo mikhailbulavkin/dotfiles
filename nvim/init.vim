@@ -3,11 +3,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
 Plug 'xavierd/clang_complete'
-Plug 'BrandonRoehl/auto-omni'
+" Plug 'BrandonRoehl/auto-omni'
 " Plug 'StanAngeloff/php.vim'
 " Plug 'shawncplus/phpcomplete.vim'
 " Plug 'scrooloose/nerdtree'
-Plug 'vim-vdebug/vdebug'
+" Plug 'vim-vdebug/vdebug'
 " Plug 'pangloss/vim-javascript'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
