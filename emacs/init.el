@@ -72,7 +72,15 @@
 (add-hook 'prog-mode-hook 'my-hide-all)
 
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(vs-light))
+ '(custom-safe-themes
+   '("bf815eb0b3031589aa53b6e01c57fa31e6fd367286204d2c15b6c07173ac63dc" "b06b2483f9fb7bfceb371c8341c0f20e3a38fecd7af7ac1c67bfa028aed9f45c" default))
+ '(package-selected-packages
+   '(evil-collection vs-light-theme undo-tree flycheck-ycmd evil-vimish-fold company-ycmd)))
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
@@ -84,16 +92,48 @@
 (auto-fill-mode -1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-evil-vimish-fold-mode 1)
-(setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 (setq initial-scratch-message nil)
-(desktop-save-mode 1)
+; (desktop-save-mode 1)
 (show-paren-mode 1)
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
+(if (display-graphic-p)
+    (progn
+      (setq initial-frame-alist
+            '(
+;              (undecorated . t)
+              (width . 87) ; chars
+              (height . 40) ; lines
+              (left . 250)
+              (top . 115)))
+      (setq default-frame-alist
+            '(
+;              (undecorated . t)
+              (width . 87)
+              (height . 40)
+              (left . 250)
+              (top . 150))))
+  (progn
+    (setq initial-frame-alist '( (tool-bar-lines . 0)))
+    (setq default-frame-alist '( (tool-bar-lines . 0)))))
 
 (setq-default fill-column 80)
 (global-display-fill-column-indicator-mode 1)
+
+; Scrolling
+(setq scroll-step            1
+      scroll-conservatively  10000)
+
+; Tab to 4 spaces
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+; Evil-mode tabs
+(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+
+; Disable bell
+(setq ring-bell-function 'ignore)
+
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro 9" ))
 (set-face-attribute 'default t :font "Source Code Pro 9" )
@@ -101,6 +141,15 @@
 (set-fontset-font "fontset-default" 'greek "Source Code Pro 9")
 
 (setq x-select-enable-clipboard-manager nil)
+
+(defun close-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
+
+(defun bash-wsl ()
+  (interactive)
+  (let ((explicit-shell-file-name "C:/Windows/System32/bash.exe"))
+    (shell)))
 
 ; c/c++ mode identation
 (c-add-style "mycodingstyle"
@@ -168,14 +217,7 @@ after)))
 ;(setq explicit-powershell.exe-args '("-Command" "-" ))
 ;(autoload 'powershell "powershell" "Run powershell as a shell within emacs." t) 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(vs-light))
- '(custom-safe-themes
-   '("b06b2483f9fb7bfceb371c8341c0f20e3a38fecd7af7ac1c67bfa028aed9f45c" default)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
