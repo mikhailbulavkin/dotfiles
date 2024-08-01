@@ -2,12 +2,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
-Plug 'xavierd/clang_complete'
-" Plug 'BrandonRoehl/auto-omni'
+" Plug 'xavierd/clang_complete' Plug 'BrandonRoehl/auto-omni'
 " Plug 'StanAngeloff/php.vim'
 " Plug 'shawncplus/phpcomplete.vim'
 " Plug 'scrooloose/nerdtree'
-" Plug 'vim-vdebug/vdebug'
+Plug 'vim-vdebug/vdebug'
 " Plug 'pangloss/vim-javascript'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -40,10 +39,12 @@ endif
 " General
 set number
 set autoindent
-set colorcolumn=78
+set colorcolumn=80
 set linebreak
 set tabstop=4
+set expandtab
 set shiftwidth=4
+set list
 
 " Folding
 set foldmethod=indent
@@ -129,7 +130,10 @@ nnoremap <silent><C-L> :call g:ToggleNuMode()<cr>
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab 
+autocmd FileType tex setlocal paste ts=4 sts=4 sw=4 expandtab
+autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType h setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType cpp set smartindent
 " autocmd FileType cpp set cinoptions=l1,g0.5s,h0.5s,:0.5s,=0.5s,t0,(0
 autocmd FileType cpp set cinoptions=l1,g0.5s,h0.5s,:0.5s,=0.5s,t0
