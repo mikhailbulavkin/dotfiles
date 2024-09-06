@@ -1,0 +1,3 @@
+[kb-lang]
+command=$SCRIPT_DIR/kb-lang
+interval=1
