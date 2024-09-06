@@ -8,6 +8,10 @@ configuration {
      show-icons: true;
      icon-theme: "Mint-Y-Dark-Sand";
 }
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
 * {
     selected-normal-foreground:  rgba ( 248, 248, 242, 100 % );
     foreground:                  rgba ( 248, 248, 242, 100 % );
