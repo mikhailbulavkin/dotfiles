@@ -26,6 +26,9 @@ URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
 URxvt.keysym.C-N: perl:new-window
 
+: centered prompt bug fix
+URxvt.geometry: 400x400
+
 
 !! colors
 ! special
